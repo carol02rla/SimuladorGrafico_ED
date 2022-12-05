@@ -25,19 +25,19 @@ public class TelaSobre extends JDialog {
 		
 		JLabel labelSobre = new JLabel("SOBRE");
 		labelSobre.setForeground(new Color(34, 38, 45));
-		labelSobre.setFont(new Font("Courier", Font.BOLD, 30));
+		labelSobre.setFont(new Font("Courier", Font.BOLD, 25));
 		labelSobre.setBounds(40, 40, 100, 50);
 		contentPanel.add(labelSobre);
 		
         JLabel texto = new JLabel("<html>"
-        + "<p>Projeto final da disciplina de Estrutura de Dados, do periodo 2022.1, com o professor Tiago Maritan.</p>"
-        + "<p>Grupo formado por Ana Carolina Aguiar, Barbara, Leticia e Jayanne. "
-        + "O seguinte trabalho apresenta as estruturas de dados estudadas na disciplina de forma grafica: "
-        + "Lista Sequencial, Lista Simplemente Encadeada, Pilha, Fila e Arvore Binaria de Pesquisa.</p>"
+        + "<p>Projeto final da disciplina de Estrutura de Dados, no periodo 2022.1, com o professor Tiago Maritan.</p> <p></p>"
+        + "<p>Grupo formado por: </p> <p>&#9Ana Carolina Aguiar [20210024326] </p> <p>&#9Bárbara [] </p> <p>&#9Letícia [] </p> <p>&#9Jayanne [] </p>"
+        + "<p></p> <p>Este projeto apresenta, de forma gráfica, as seguintes estruturas de dados estudadas na disciplina: "
+        + "Lista Sequencial, Lista Simplemente Encadeada, Pilha, Fila e Árvore Binária de Pesquisa.</p>"
         + "</html>");
 		texto.setForeground(new Color(34, 38, 45));
-		texto.setFont(new Font("Courier", Font.PLAIN, 26));
-		texto.setBounds(40, 100, 920, 300);
+		texto.setFont(new Font("Courier", Font.PLAIN, 20));
+		texto.setBounds(40, 90, 920, 350);
 		contentPanel.add(texto);
         
         JButton botaoVoltar = new JButton("VOLTAR");
@@ -49,8 +49,8 @@ public class TelaSobre extends JDialog {
 		botaoVoltar.setForeground(new Color(34, 38, 45));
 		botaoVoltar.setBackground(Color.WHITE);
         botaoVoltar.setFocusable(false);
-		botaoVoltar.setFont(new Font("Courier", Font.PLAIN, 22));
-		botaoVoltar.setBounds(430, 450, 140, 30);
+		botaoVoltar.setFont(new Font("Courier", Font.PLAIN, 20));
+		botaoVoltar.setBounds(440, 470, 120, 30);
 		contentPanel.add(botaoVoltar);
 
         this.setVisible(true);

@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class JanelaPrincipal extends JFrame implements ActionListener {
+public class JanelaPrincipal extends JFrame {
 
     private JPanel contentPane;
     
@@ -48,12 +48,13 @@ public class JanelaPrincipal extends JFrame implements ActionListener {
         addButton(botaoLS, 375, 140);
 
         botaoLSE = new JButton("LISTA ENCADEADA");
-		// botaoLSE.addActionListener(new ActionListener() {
-		// 	public void actionPerformed(ActionEvent e) {
-		// 		ListaEnc2GUI le = new ListaEnc2GUI();
-		// 		le.setVisible(true);
-		// 	}
-		// });
+		botaoLSE.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// ListaEnc2GUI le = new ListaEnc2GUI();
+				// le.setVisible(true);
+                new LSE_GUI();
+			}
+		});
         addButton(botaoLSE, 375, 190);
         
         botaoPilha = new JButton("PILHA");
@@ -74,7 +75,7 @@ public class JanelaPrincipal extends JFrame implements ActionListener {
 		// });
         addButton(botaoFila, 375, 290);
         
-        botaoABP = new JButton("ARVORE BINARIA");
+        botaoABP = new JButton("ÁRVORE BINÁRIA");
 		// botaoLSE.addActionListener(new ActionListener() {
 		// 	public void actionPerformed(ActionEvent e) {
 		// 		ListaEnc2GUI le = new ListaEnc2GUI();
@@ -143,12 +144,6 @@ public class JanelaPrincipal extends JFrame implements ActionListener {
         button.setFont(new Font("Courier", Font.PLAIN, 18));
         button.setFocusable(false);
         contentPane.add(button);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        
     }
 
     public static void main(String[] args) {
