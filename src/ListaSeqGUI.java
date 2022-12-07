@@ -47,9 +47,9 @@ public class ListaSeqGUI extends JFrame{
         this.setContentPane(contentPane);
 
         JLabel lblLS = new JLabel("Lista Sequencial");
-        lblLS.setBounds(389,11,199,58);
+        lblLS.setBounds(389,11,250,58);
         lblLS.setForeground(new Color(0,0,0));
-        lblLS.setFont(new Font("Courrier", Font.CENTER_BASELINE, 24));
+        lblLS.setFont(new Font("Courier", Font.CENTER_BASELINE, 24));
         contentPane.add(lblLS);
         
         // ImageIcon lixeira = new ImageIcon("imagens/garbage.png");

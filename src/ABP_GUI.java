@@ -70,7 +70,7 @@ public class ABP_GUI extends JDialog {
         b_limpar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 limpar();
-                // atualizaInfoPanel();
+                atualizaInfoPanel();
             }
         });
         
@@ -109,6 +109,21 @@ public class ABP_GUI extends JDialog {
 
         paintOp();
     }
+
+    private void atualizaInfoPanel() {
+        JLabel infos = new JLabel("");
+        
+            contentPanel.add(infos);
+            infos.setText("<html> <p>" + abp.exibePreOrdem() + "</p> <p>" + abp.exibeInOrdem() + "</p> <p>" + abp.exibePosOrdem() + "</p> </html>");
+            infos.setBounds(155, 452, 240, 90);
+            infos.setForeground(new Color(34, 38, 45));
+            infos.setFont(new Font("Courier", Font.BOLD, 18));
+            infos.setHorizontalAlignment(SwingConstants.RIGHT);
+            infos.setOpaque(true);
+            infos.setBackground(Color.LIGHT_GRAY);
+            infos.setVisible(true);
+    }
+
 
     private void paintOp() {
 
@@ -157,7 +172,7 @@ public class ABP_GUI extends JDialog {
                     JOptionPane.showMessageDialog(null, "Digite um elemento válido", "[ERRO] ELEMENTO INVÁLIDO", JOptionPane.WARNING_MESSAGE);
                 }
                 i_elemento.setText("");
-                // atualizaInfoPanel();
+                atualizaInfoPanel();
             }
         });
         

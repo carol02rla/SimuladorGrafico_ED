@@ -45,7 +45,7 @@ public class LSE_GUI extends JDialog {
         l_icon.setForeground(new Color(34, 38, 45));
 		l_icon.setFont(new Font("Courier", Font.BOLD, 25));
         l_icon.setIcon(iconLSE);
-        l_icon.setBounds(880, 485, 700, 80);
+        l_icon.setBounds(865, 485, 85, 70);
         l_icon.setVisible(true);
         this.getContentPane().add(l_icon);
         

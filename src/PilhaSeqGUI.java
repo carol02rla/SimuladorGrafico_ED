@@ -73,7 +73,7 @@ public class PilhaSeqGUI extends JDialog {
                     if (conteudo != null && (conteudo.length()) > 0) {
                         try {
                             position[cont].setText(conteudo);
-                            position[cont].setFont(new Font("Impact", Font.PLAIN, 18));
+                            position[cont].setFont(new Font("Courier", Font.BOLD, 18));
                             cont++;
 
                             // Empilhando o dado na pilha
@@ -92,7 +92,7 @@ public class PilhaSeqGUI extends JDialog {
         });
         btnPush.setForeground(new Color(51, 51, 51));
         btnPush.setBackground(new Color(255, 255, 255));
-        btnPush.setFont(new Font("Impact", Font.PLAIN, 16));
+        btnPush.setFont(new Font("Courier", Font.PLAIN, 16));
         btnPush.setBounds(115, 94, 89, 23);
         getContentPane().add(btnPush);
 
@@ -122,7 +122,7 @@ public class PilhaSeqGUI extends JDialog {
             }
         });
         btnPop.setForeground(new Color(51, 51, 51));
-        btnPop.setFont(new Font("Impact", Font.PLAIN, 16));
+        btnPop.setFont(new Font("Courier", Font.PLAIN, 16));
         btnPop.setBackground(new Color(255, 255, 255));
         btnPop.setBounds(235, 94, 89, 23);
         getContentPane().add(btnPop);
@@ -143,7 +143,7 @@ public class PilhaSeqGUI extends JDialog {
             }
         });
         btnTop.setForeground(new Color(51, 51, 51));
-        btnTop.setFont(new Font("Impact", Font.PLAIN, 16));
+        btnTop.setFont(new Font("Courier", Font.PLAIN, 16));
         btnTop.setBackground(new Color(255, 255, 255));
         btnTop.setBounds(355, 94, 89, 23);
         getContentPane().add(btnTop);

@@ -39,12 +39,12 @@ public class JanelaPrincipal extends JFrame {
 		contentPane.add(labelED);
 
         botaoLS = new JButton("LISTA SEQUENCIAL");
-		 botaoLS.addActionListener(new ActionListener() {
-		 	public void actionPerformed(ActionEvent e) {
-		 		ListaSeqGUI le = new ListaSeqGUI();
-		 		le.setVisible(true);
-		 	}
-		 });
+        botaoLS.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                ListaSeqGUI le = new ListaSeqGUI();
+                le.setVisible(true);
+            }
+        });
         addButton(botaoLS, 375, 140);
 
         botaoLSE = new JButton("LISTA ENCADEADA");
@@ -56,21 +56,21 @@ public class JanelaPrincipal extends JFrame {
         addButton(botaoLSE, 375, 190);
         
         botaoPilha = new JButton("PILHA");
-		 botaoLSE.addActionListener(new ActionListener() {
-		 	public void actionPerformed(ActionEvent e) {
-		 		PilhaSeqGUI le = new PilhaSeqGUI();
-		 		le.setVisible(true);
-		 	}
-		 });
+        botaoPilha.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                PilhaSeqGUI le = new PilhaSeqGUI();
+                le.setVisible(true);
+            }
+        });
         addButton(botaoPilha, 375, 240);
         
         botaoFila = new JButton("FILA");
-		 botaoLSE.addActionListener(new ActionListener() {
-		 	public void actionPerformed(ActionEvent e) {
-		 		FilaSeqGUI le = new FilaSeqGUI();
-		 		le.setVisible(true);
-		 	}
-		 });
+        botaoFila.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                FilaSeqGUI le = new FilaSeqGUI();
+                le.setVisible(true);
+            }
+        });
         addButton(botaoFila, 375, 290);
         
         botaoABP = new JButton("ÁRVORE BINÁRIA");
@@ -104,13 +104,6 @@ public class JanelaPrincipal extends JFrame {
         botaoQuit.setBackground(Color.WHITE);
         botaoQuit.setBounds(550, 430, 100, 30);
         botaoQuit.setFont(new Font("Courier", Font.BOLD, 18));
-
-        // JLabel label = new JLabel("");
-        // ImageIcon icon = new ImageIcon("imagens/ED.png");
-        // icon = scaleImage(icon, 100, 100);
-		// label.setIcon(icon);
-		// label.setBounds(800, 10, 100, 100);
-		// contentPane.add(label);
     }
 
     public ImageIcon scaleImage(ImageIcon icon, int w, int h) {

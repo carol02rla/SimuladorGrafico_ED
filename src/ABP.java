@@ -36,74 +36,6 @@ public class ABP {
 		//return null;
 	}
 	
-	public int buscaIterativa(int valor) {          
-		String ordem = "";
-		int pos = 0;
-
-		if (vazia())
-			return -1;
-		
-		NoABP aux = raiz;
-		while (aux != null) {
-			// Verificando se o conteudo do no atual 
-			// é igual ao valor procurado
-			if (aux.getConteudo() == valor) {
-				pos = posicoes(ordem);
-				return pos;
-			}
-			
-			// Se o valor procurado for menor que raiz,
-			// continue pesquisando na sub-arv da esq.
-			if (valor < aux.getConteudo()){
-				aux = aux.getEsq();
-				ordem += "0";
-			}
-			// Caso contratio, pesquise na sub-arv 
-			// da direita
-			else {
-				aux = aux.getDir();
-				ordem += "1";
-			}
-		}
-
-		return -1;
-	}
-	
-	
-	/**Exibe o conteúdo de uma árvore no formato in-ordem
-	    (preserva a ordenação)*/
-	private void exibe (NoABP T){
-		if (T != null) {
-			exibe(T.getEsq());
-			System.out.print(" " + T.getConteudo());
-			exibe(T.getDir());
-		}
-	}
-
-	public void exibe() {
-		if (raiz == null)
-			System.out.println("Arvore vazia");
-		else
-			exibe(raiz);
-	}
-	
-	/**Exibe o conteúdo de uma árvore no formato in-ordem
-    (preserva a ordenação)*/
-	private void exibeDec(NoABP T){
-		if (T != null) {
-			exibeDec(T.getDir());
-			System.out.print(" " + T.getConteudo());
-			exibeDec(T.getEsq());
-		}
-	}
-	
-	public void exibeDec() {
-		if (raiz == null)
-			System.out.println("Arvore vazia");
-		else
-			exibeDec(raiz);
-	}
-	
 	/**Insere um nó em uma árvore ABP
 	    Retorna 1 se a inserção for com sucesso.
 	    Caso contrário retorna 0*/
@@ -212,73 +144,84 @@ public class ABP {
 	}
 
 	/** Exibe o conteúdo de uma árvore em pré-ordem*/
-	private void exibePreOrdem(NoABP T) {
+	private String exibePreOrdem(NoABP T) {
+		String preOrdem = "";
+
 		if (T == null)
-			return;
+			return "";
 	
 		// Imprime a raiz
-		System.out.print(" " + T.getConteudo());
+		preOrdem += T.getConteudo();
 		
 		// Caminha recursivamente na sub-arv da esq (pre-ordem)
 		if (T.getEsq() != null)
-			exibePreOrdem(T.getEsq());
+			preOrdem = preOrdem + " " + exibePreOrdem(T.getEsq());
 	
 		// Caminha recursivamente na sub-arv da dir (pre-ordem)
 	 	if (T.getDir() != null)
-			exibePreOrdem(T.getDir());
+		 	preOrdem = preOrdem + " " + exibePreOrdem(T.getDir());
+
+		return preOrdem;
 	}
 
 	/** Exibe o conteúdo de uma árvore em pré-ordem*/
-	public void exibePreOrdem() {
+	public String exibePreOrdem() {
 		if (raiz == null)
-			System.out.println("Arvore vazia");
+			return "Árvore vazia";
 		else
-			exibePreOrdem(raiz);
+			return exibePreOrdem(raiz);
 	}	
 	
 	
 	/** Exibe o conteúdo de uma árvore em pré-ordem*/
-	private void exibeInOrdem(NoABP T) {
+	private String exibeInOrdem(NoABP T) {
+		String inOrdem = "";
 		if (T == null)
-			return ;
+			return "";
 
 		if (T.getEsq() != null)
-			exibeInOrdem(T.getEsq());
+			inOrdem = inOrdem + " " + exibeInOrdem(T.getEsq());
 	
-	    System.out.print(" " + T.getConteudo());
+		inOrdem = inOrdem + " " + T.getConteudo();
 	
 	 	if (T.getDir() != null)
-			exibeInOrdem(T.getDir());
+		 	inOrdem = inOrdem + " " + exibeInOrdem(T.getDir());
+
+			return inOrdem;
 	}
 
 	
 	/** Exibe o conteúdo de uma árvore em pré-ordem*/
-	public void exibeInOrdem() {
+	public String exibeInOrdem() {
 		if (raiz == null)
-			System.out.println("Arvore vazia");
+			return "Arvore vazia";
 		else
-			exibeInOrdem(raiz);
+			return exibeInOrdem(raiz);
 	}	
 	
 	/** Exibe o conteúdo de uma árvore em pré-ordem*/
-	private void exibePosOrdem(NoABP T) {
+	private String exibePosOrdem(NoABP T) {
+		String posOrdem = "";
+
 		if (T == null)
-			return ;
+			return "";
 
 		if (T.getEsq() != null)
-			exibePosOrdem(T.getEsq());
+			posOrdem = posOrdem + " " + exibePosOrdem(T.getEsq());
 	
 	 	if (T.getDir() != null)
-			exibePosOrdem(T.getDir());
+			posOrdem = posOrdem + " " + exibePosOrdem(T.getDir());
 
-	 	System.out.print(" " + T.getConteudo());
+		posOrdem = posOrdem + " " + T.getConteudo();
+
+		return posOrdem;
 	}
 	
 	/** Exibe o conteúdo de uma árvore em pré-ordem*/
-	public void exibePosOrdem() {
+	public String exibePosOrdem() {
 		if (raiz == null)
-			System.out.println("Arvore vazia");
+			return "Arvore vazia";
 		else
-			exibePosOrdem(raiz);
+			return exibePosOrdem(raiz);
 	}
 }
