@@ -39,12 +39,12 @@ public class JanelaPrincipal extends JFrame {
 		contentPane.add(labelED);
 
         botaoLS = new JButton("LISTA SEQUENCIAL");
-		// botaoLS.addActionListener(new ActionListener() {
-		// 	public void actionPerformed(ActionEvent e) {
-		// 		ListaSeqGUI l = new ListaSeqGUI();
-		// 		l.setVisible(true);
-		// 	}
-		// });
+		 botaoLS.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent e) {
+		 		ListaSeqGUI le = new ListaSeqGUI();
+		 		le.setVisible(true);
+		 	}
+		 });
         addButton(botaoLS, 375, 140);
 
         botaoLSE = new JButton("LISTA ENCADEADA");
@@ -58,21 +58,21 @@ public class JanelaPrincipal extends JFrame {
         addButton(botaoLSE, 375, 190);
         
         botaoPilha = new JButton("PILHA");
-		// botaoLSE.addActionListener(new ActionListener() {
-		// 	public void actionPerformed(ActionEvent e) {
-		// 		ListaEnc2GUI le = new ListaEnc2GUI();
-		// 		le.setVisible(true);
-		// 	}
-		// });
+		 botaoLSE.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent e) {
+		 		PilhaSeqGUI le = new PilhaSeqGUI();
+		 		le.setVisible(true);
+		 	}
+		 });
         addButton(botaoPilha, 375, 240);
         
         botaoFila = new JButton("FILA");
-		// botaoLSE.addActionListener(new ActionListener() {
-		// 	public void actionPerformed(ActionEvent e) {
-		// 		ListaEnc2GUI le = new ListaEnc2GUI();
-		// 		le.setVisible(true);
-		// 	}
-		// });
+		 botaoLSE.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent e) {
+		 		FilaSeqGUI le = new FilaSeqGUI();
+		 		le.setVisible(true);
+		 	}
+		 });
         addButton(botaoFila, 375, 290);
         
         botaoABP = new JButton("ÁRVORE BINÁRIA");
