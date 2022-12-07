@@ -70,6 +70,24 @@ public class FilaSeqGUI extends JDialog {
 		botaoFilaInserir.setBounds(30, 130, 115, 30);
 		contentPanel.add(botaoFilaInserir);
 		
+		ImageIcon home = new ImageIcon("imagens/home-page.png");
+        	home = scaleImage(home, 18, 18);
+
+        	JButton b_homepage = new JButton();
+        	b_homepage.setIcon(home);
+        	b_homepage.setBounds(850, 30, 30, 30);
+        	b_homepage.setBackground(Color.WHITE);
+        	b_homepage.setAlignmentX(CENTER_ALIGNMENT);
+        	b_homepage.setAlignmentY(CENTER_ALIGNMENT);
+        	b_homepage.setFocusable(false);
+        	b_homepage.setVisible(true);
+       	 	contentPanel.add(b_homepage);
+        	b_homepage.addActionListener(new ActionListener() {
+            		public void actionPerformed(ActionEvent e) {
+                		dispose();
+            		}
+        	});
+		
 		botaoFilaInserir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(!fila.cheia()) {
