@@ -5,7 +5,7 @@
 
 import java.awt.Font;
 import java.awt.Color;
-
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -70,7 +70,7 @@ public class FilaSeqGUI extends JDialog {
         botaoFilaInserir.setBounds(30, 130, 115, 30);
         contentPanel.add(botaoFilaInserir);
 
-        ImageIcon home = new ImageIcon("imagens/home-page.png");
+        ImageIcon home = new ImageIcon("Projeto-Final---ED-master/imagens/home-page.png");
         home = scaleImage(home, 18, 18);
 
         JButton b_homepage = new JButton();
@@ -218,7 +218,26 @@ public class FilaSeqGUI extends JDialog {
         contentPanel.add(posicoes[9]);
     }
 
+    //private ImageIcon scaleImage(ImageIcon home, int i, int j) {
+      //  return null;
+    //}
+    
     private ImageIcon scaleImage(ImageIcon home, int i, int j) {
-        return null;
+        int ni = home.getIconWidth();
+        int nj = home.getIconHeight();
+
+        if(home.getIconWidth() > i) {
+          ni = i;
+          nj = (ni * home.getIconHeight()) / home.getIconWidth();
+        
+
+        if(nj > j) {
+          nj = j;
+          ni = (home.getIconWidth() * nj) / home.getIconHeight();
+        }
+
+        return new ImageIcon(home.getImage().getScaledInstance(ni, nj, Image.SCALE_DEFAULT));
+    }
+        return home; 
     }
 }
