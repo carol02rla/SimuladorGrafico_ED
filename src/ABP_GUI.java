@@ -67,7 +67,7 @@ public class ABP_GUI extends JDialog {
         contentPanel.setBounds(0, 0, 1000, 600);
         contentPanel.setVisible(true);
 
-        ImageIcon iconABP = new ImageIcon("imagens/diagram2.png");
+        ImageIcon iconABP = new ImageIcon("Projeto-Final---ED-master/imagens/diagram2.png");
         iconABP = scaleImage(iconABP, 85, 85);
         
         JLabel l_icon = new JLabel();
@@ -86,7 +86,7 @@ public class ABP_GUI extends JDialog {
         titulo.setVisible(true);
         this.getContentPane().add(titulo);
 
-        ImageIcon lixeira = new ImageIcon("imagens/garbage.png");
+        ImageIcon lixeira = new ImageIcon("Projeto-Final---ED-master/imagens/garbage.png");
         lixeira = scaleImage(lixeira, 18, 18);
 
         JButton b_limpar = new JButton();
@@ -105,7 +105,7 @@ public class ABP_GUI extends JDialog {
             }
         });
         
-        ImageIcon home = new ImageIcon("imagens/home-page.png");
+        ImageIcon home = new ImageIcon("Projeto-Final---ED-master/imagens/home-page.png");
         home = scaleImage(home, 18, 18);
         
         JButton b_homepage = new JButton();
