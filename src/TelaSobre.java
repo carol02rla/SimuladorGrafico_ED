@@ -31,7 +31,7 @@ public class TelaSobre extends JDialog {
 		
         JLabel texto = new JLabel("<html>"
         + "<p>Projeto final da disciplina de Estrutura de Dados, no periodo 2022.1, com o professor Tiago Maritan.</p> <p></p>"
-        + "<p>Grupo formado por: </p> <p>&#9Ana Carolina Aguiar [20210024326] </p> <p>&#9Bárbara [] </p> <p>&#9Letícia [] </p> <p>&#9Jayanne Morais [20190026757] </p>"
+        + "<p>Grupo formado por: </p> <p>&#9Ana Carolina Aguiar [20210024326] </p> <p>&#9Bárbara Hellen Padilha da Silva [20200004867] </p> <p>&#9Letícia Serrano Dantas [20170118575] </p> <p>&#9Jayanne Laysa Cruz Morais [2019002675720190026757] </p>"
         + "<p></p> <p>Este projeto apresenta, de forma gráfica, as seguintes estruturas de dados estudadas na disciplina: "
         + "Lista Sequencial, Lista Simplemente Encadeada, Pilha, Fila e Árvore Binária de Pesquisa.</p>"
         + "</html>");
