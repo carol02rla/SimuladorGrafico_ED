@@ -71,7 +71,7 @@ public class ListaSeqGUI extends JFrame{
         //     }
         // });
 
-        ImageIcon home = new ImageIcon("imagens/home-page.png");
+        ImageIcon home = new ImageIcon("Projeto-Final---ED-master/imagens/home-page.png");
         home = scaleImage(home, 18, 18);
         
         JButton b_homepage = new JButton();

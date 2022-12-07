@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Image;
@@ -18,10 +13,6 @@ import java.awt.BorderLayout;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
-/**
- *
- * @author bárbara
- */
 
 public class FilaSeqGUI extends JDialog {
 
