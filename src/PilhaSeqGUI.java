@@ -3,7 +3,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -42,7 +42,7 @@ public class PilhaSeqGUI extends JDialog {
         lblPilha.setBounds(188, 11, 197, 58);
         getContentPane().add(lblPilha);
 
-        ImageIcon home = new ImageIcon("imagens/home-page.png");
+        ImageIcon home = new ImageIcon("Projeto-Final---ED-master/imagens/home-page.png");
         home = scaleImage(home, 18, 18);
 
         JButton b_homepage = new JButton();
@@ -113,11 +113,11 @@ public class PilhaSeqGUI extends JDialog {
                         JOptionPane.showMessageDialog(null, "Item desempilhado: " + removido, "POP!",
                                 JOptionPane.INFORMATION_MESSAGE);
                     } catch (Exception e2) {
-                        JOptionPane.showMessageDialog(null, "�ltimo elemento desempilhado: " +
+                        JOptionPane.showMessageDialog(null, "Último elemento desempilhado: " +
                                 removido, "Pilha vazia!", JOptionPane.WARNING_MESSAGE);
                     }
                 } else {
-                    JOptionPane.showMessageDialog(null, "A pilha est� vazia !", "ERRO", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "A pilha está vazia !", "ERRO", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -138,7 +138,7 @@ public class PilhaSeqGUI extends JDialog {
                     JOptionPane.showMessageDialog(null, "Topo atual da pilha: " + top, "TOP!",
                             JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(null, "A pilha est� vazia", "NO TOP!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "A pilha está vazia", "NO TOP!", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -196,8 +196,27 @@ public class PilhaSeqGUI extends JDialog {
         contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
     }
 
-    private ImageIcon scaleImage(ImageIcon home, int i, int j) {
-        return null;
+    //private ImageIcon scaleImage(ImageIcon home, int i, int j) {
+      //  return null;
+    //}
+    
+     private ImageIcon scaleImage(ImageIcon home, int i, int j) {
+        int ni = home.getIconWidth();
+        int nj = home.getIconHeight();
+
+        if(home.getIconWidth() > i) {
+          ni = i;
+          nj = (ni * home.getIconHeight()) / home.getIconWidth();
+        
+
+        if(nj > j) {
+          nj = j;
+          ni = (home.getIconWidth() * nj) / home.getIconHeight();
+        }
+
+        return new ImageIcon(home.getImage().getScaledInstance(ni, nj, Image.SCALE_DEFAULT));
+    }
+        return home; 
     }
 
     public static void main(String[] args) {
