@@ -175,6 +175,42 @@ public class ABP {
 		return posicao;
 	}
 
+	public void limparABP(int indice) {
+		NoABP aux = raiz;
+		int i = 0;
+		while (i < indice) {			
+			if(aux == null) {
+				break;
+			} else {
+				aux = raiz;
+				if(aux == null) {
+					break;
+				} else {
+					// Se o valor procurado for menor que raiz,
+					// continue pesquisando na sub-arv da esq.
+					if (aux.getEsq() != null){
+						aux = aux.getEsq();
+					}
+					// Caso contratio, pesquise na sub-arv 
+					// da direita
+					else if (aux.getDir() != null) {
+						aux = aux.getDir();
+					} else if (aux.getEsq() == null && aux.getDir() == null) {
+						aux = null;
+					}
+				}
+			}
+
+			i++;
+		}
+
+		raiz = null;
+	}
+
+	public void limparABP() {
+		raiz = null;
+	}
+
 	/** Exibe o conteúdo de uma árvore em pré-ordem*/
 	private void exibePreOrdem(NoABP T) {
 		if (T == null)

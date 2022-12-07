@@ -50,8 +50,6 @@ public class JanelaPrincipal extends JFrame {
         botaoLSE = new JButton("LISTA ENCADEADA");
 		botaoLSE.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// ListaEnc2GUI le = new ListaEnc2GUI();
-				// le.setVisible(true);
                 new LSE_GUI();
 			}
 		});
@@ -76,19 +74,16 @@ public class JanelaPrincipal extends JFrame {
         addButton(botaoFila, 375, 290);
         
         botaoABP = new JButton("ÁRVORE BINÁRIA");
-		// botaoLSE.addActionListener(new ActionListener() {
-		// 	public void actionPerformed(ActionEvent e) {
-		// 		ListaEnc2GUI le = new ListaEnc2GUI();
-		// 		le.setVisible(true);
-		// 	}
-		// });
+		botaoABP.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new ABP_GUI();
+			}
+		});
         addButton(botaoABP, 375, 340);
         
         botaoSobre = new JButton("SOBRE");
 		botaoSobre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// TelaSobre sobre = new TelaSobre();
-				// sobre.setVisible(true);
                 new TelaSobre();
 			}
 		});

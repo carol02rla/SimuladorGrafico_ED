@@ -20,37 +20,7 @@ public class ABP_GUI extends JDialog {
         paintCabecalho();
         infoPanel();
 
-        indice = 0; // inicializar em limpar()
-
-        // paintElem(1, 1);
-        // paintLinha(1, 0);
-        // paintLinha(1, 1);
-        // paintElem(2, 2);
-        // paintLinha(2, 0);
-        // paintLinha(2, 1);
-        // paintElem(3, 3);
-        // paintLinha(3, 0);
-        // paintLinha(3, 1);
-        // paintElem(4, 4);
-        // paintLinha(4, 0);
-        // paintLinha(4, 1);
-        // paintElem(5, 5);
-        // paintLinha(5, 0);
-        // paintLinha(5, 1);
-        // paintElem(6, 6);
-        // paintLinha(6, 0);
-        // paintLinha(6, 1);
-        // paintElem(7, 7);
-        // paintLinha(7, 0);
-        // paintLinha(7, 1);
-        // paintElem(8, 8);
-        // paintElem(9, 9);
-        // paintElem(10, 10);
-        // paintElem(11, 11);
-        // paintElem(12, 12);
-        // paintElem(13, 13);
-        // paintElem(14, 14);
-        // paintElem(15, 15);
+        indice = 0;
 
         this.setModal(true);
 		this.setBounds(0, 0, 1000, 600);
@@ -75,7 +45,6 @@ public class ABP_GUI extends JDialog {
 		l_icon.setFont(new Font("Courier", Font.BOLD, 25));
         l_icon.setIcon(iconABP);
         l_icon.setBounds(870, 462, 100, 80);
-        // l_icon.setBounds(30, 55, 100, 80);
         l_icon.setVisible(true);
         this.getContentPane().add(l_icon);
         
@@ -100,7 +69,7 @@ public class ABP_GUI extends JDialog {
         this.getContentPane().add(b_limpar);
         b_limpar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // limpar(); // limpar indice
+                limpar();
                 // atualizaInfoPanel();
             }
         });
@@ -175,6 +144,7 @@ public class ABP_GUI extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 String i_txtValor = i_elemento.getText();
                 try {
+                    resetColors();
                     valor = Integer.parseInt(i_txtValor);
                     if(i_txtValor.equals("")) {
                         JOptionPane.showMessageDialog(null, "Preencha o campo Elemento", "[ERRO] CAMPO VAZIO", JOptionPane.WARNING_MESSAGE);
@@ -223,6 +193,7 @@ public class ABP_GUI extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 String b_txtElem = b_elemento.getText();
                 try {
+                    resetColors();
                     if(b_txtElem.equals("")) {
                         JOptionPane.showMessageDialog(null, "Preencha o campo Elemento", "[ERRO] CAMPO VAZIO", JOptionPane.WARNING_MESSAGE);
                     }
@@ -232,7 +203,6 @@ public class ABP_GUI extends JDialog {
                     }
                 } catch(Exception e1) {
                     JOptionPane.showMessageDialog(null, "ERRO", "", JOptionPane.WARNING_MESSAGE);
-                    System.out.println("erro " + e1);
                 }
                 b_elemento.setText("");
             }
@@ -260,21 +230,15 @@ public class ABP_GUI extends JDialog {
         if(abp.vazia()) {
             JOptionPane.showMessageDialog(null, "Não há elementos na árvore", "[ERRO] ÁRVORE VAZIA", JOptionPane.WARNING_MESSAGE);
         } else {
-            int pos = abp.buscaIterativa(valor);
+            NoABP aux = abp.busca(valor);
 
-            if(pos == -1) {
+            if(aux == null) {
                 JOptionPane.showMessageDialog(null, "Elemento não inserido na árvore", "[ERRO] ELEMENTO INEXISTENTE", JOptionPane.WARNING_MESSAGE);
             } else {
                 for(int i = 0; i < indice; i++) {
                     elementos[i].setBackground(Color.GREEN);
                     if(elementos[i].getText().equals(texto)) {
                         break;
-                    }
-                    try {
-                        Thread.sleep(1000); // so atualiza a janela ao fim do evento
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                        return;
                     }
                     if(i == 0) {
                         elementos[0].setBackground(Color.LIGHT_GRAY);
@@ -284,6 +248,16 @@ public class ABP_GUI extends JDialog {
                 }
             }
 
+        }
+    }
+
+    private void resetColors() {
+        for(int i = 0; i < indice; i++) {
+            if(i == 0) {
+                elementos[0].setBackground(Color.LIGHT_GRAY);
+            } else {
+                elementos[i].setBackground(Color.WHITE);
+            }
         }
     }
 
@@ -348,6 +322,28 @@ public class ABP_GUI extends JDialog {
         linhas[indice-1].setBounds(x, y, w, h);
         linhas[indice-1].setVisible(true);
     }
+
+    private void limpar() {
+        if(indice == 0) {
+            this.getContentPane().repaint();
+        } else if (indice == 1) {
+            elementos[0].setVisible(false);
+            contentPanel.remove(elementos[0]);
+            indice--;
+            limpar();
+        } else {
+            int i = indice;
+            for(indice = i; indice > 1; indice--) {
+                elementos[indice-1].setVisible(false);
+                linhas[indice-2].setVisible(false);
+                contentPanel.remove(elementos[indice-1]);
+            }
+            limpar();
+        }
+        
+        abp.limparABP();
+        indice = 0;
+    }
     
     private ImageIcon scaleImage(ImageIcon icon, int w, int h) {
         int nw = icon.getIconWidth();
@@ -367,6 +363,12 @@ public class ABP_GUI extends JDialog {
     }
     
     public static void main(String[] args) {
-        new ABP_GUI();
+        try {
+			ABP_GUI ABP = new ABP_GUI();
+			ABP.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			ABP.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 }
